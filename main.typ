@@ -21,11 +21,11 @@ linear.
 ==
 
 $
-cal(H)(#w) &= (1 - e^(-i #w)) (1 - 1/2 e^(-i #w + pi/3 i)) (1 - 1/2 e^(-i #w - pi/3 i)) \
-           &= 1 - 1/2 e^(-i #w - pi/3 i) - 1/2 e^(-i #w + pi/3 i) + 1/4 e^(-2i #w) \
-           &= 1 - 1/2 e^(-i #w) + 1/4 e^(-2i #w) \
-==>      b &= {1, -1/2, 1/4} \
-==>   y[n] &= x[n] - 1/2 x[n - 1] + 1/4 x[n - 2]
+cal(H)(e^(i#w)) &= (1 - e^(-i #w)) (1 - 1/2 e^(-i #w + pi/3 i)) (1 - 1/2 e^(-i #w - pi/3 i)) \
+                &= 1 - 1/2 e^(-i #w - pi/3 i) - 1/2 e^(-i #w + pi/3 i) + 1/4 e^(-2i #w) \
+                &= 1 - 1/2 e^(-i #w) + 1/4 e^(-2i #w) \
+==>           b &= {1, -1/2, 1/4} \
+==>        y[n] &= x[n] - 1/2 x[n - 1] + 1/4 x[n - 2]
 $
 
 ==
@@ -43,8 +43,8 @@ $
 ==
 
 $
-x[n] = A e^(i #w n + i phi) &<==> y[n] = cal(H)(#w) x[n] \
-x[n] != 0 & ==> cal(H)(#w) = 0 \
+x[n] = A e^(i #w n + i phi) &<==> y[n] = cal(H)(e^(i#w)) x[n] \
+x[n] != 0 & ==> cal(H)(e^(i#w)) = 0 \
           &<==> e^(-i #w) = 1 or 1/2 e^(-i #w + pi/3 i) = 1 or 1/2 e^(-i #w - pi/3 i) \
           &<==> #w = 2pi k or [#w in.not RR] or [#w in.not RR] quad & k in ZZ \
           & ==> #w = 0
@@ -53,10 +53,10 @@ $
 =
 
 $
-cal(H)(#w) &= (1 - e^(-i #w)) (1 - 1/2 e^(-i #w + pi/3 i)) (1 - 1/2 e^(-i #w - pi/3 i)) \
-           &= (1 + e^(-2i #w)) (1 + e^(-3i #w)) \
-           &= 1 + e^(-2i #w) + e^(-3i #w) + e^(-5i #w) \
-==>   h[n] &= delta[n] + delta[n - 2] + delta[n - 3] + delta[n - 5]
+cal(H)(e^(i#w)) &= (1 - e^(-i #w)) (1 - 1/2 e^(-i #w + pi/3 i)) (1 - 1/2 e^(-i #w - pi/3 i)) \
+                &= (1 + e^(-2i #w)) (1 + e^(-3i #w)) \
+                &= 1 + e^(-2i #w) + e^(-3i #w) + e^(-5i #w) \
+==>        h[n] &= delta[n] + delta[n - 2] + delta[n - 3] + delta[n - 5]
 $
 
 Define $S: x |-> y$.
@@ -81,7 +81,7 @@ $
 ==
 
 $
-cal(H)(#w) = 1/4 (1 + e^(-i #w) + e^(-2i #w) + e^(-3i #w))
+cal(H)(e^(i#w)) = 1/4 (1 + e^(-i #w) + e^(-2i #w) + e^(-3i #w))
 $
 
 ==
@@ -128,9 +128,9 @@ included.
 ==
 
 $
-cal(H)(#w) &= cal(H)_1(#w) cal(H)_2(#w) \
-           &= (1/3 (1 + e^(-i #w) + e^(-2i #w)))(1 - e^(-i #w)) \
-           &= 1/3 (1 - e^(-3i #w))
+cal(H)(e^(i#w)) &= cal(H)_1(e^(i#w)) cal(H)_2(e^(i#w)) \
+                &= (1/3 (1 + e^(-i #w) + e^(-2i #w)))(1 - e^(-i #w)) \
+                &= 1/3 (1 - e^(-3i #w))
 $
 
 ==
@@ -159,15 +159,15 @@ $
 
 $
      &h_2[n] = delta[n] - delta[n - 1] + delta[n - 2] - delta[n - 3] \
-<==> &cal(H)_2(#w) = 1 - e^(-i #w) + e^(-2i #w) - e^(-3i #w)
+<==> &cal(H)_2(e^(i#w)) = 1 - e^(-i #w) + e^(-2i #w) - e^(-3i #w)
 $
 
 ==
 
 $
-cal(H)(#w) &= cal(H)_1(#w) cal(H)_2(#w) \
-           &= (1 + 2e^(-i #w) + e^(-2i #w)) (1 - e^(-i #w) + e^(-2i #w) - e^(-3i #w)) \
-           &= 1 + e^(-i #w) - e^(-4i #w) - e^(-5i #w)
+cal(H)(e^(i#w)) &= cal(H)_1(e^(i#w)) cal(H)_2(e^(i#w)) \
+                &= (1 + 2e^(-i #w) + e^(-2i #w)) (1 - e^(-i #w) + e^(-2i #w) - e^(-3i #w)) \
+                &= 1 + e^(-i #w) - e^(-4i #w) - e^(-5i #w)
 $
 
 ==
